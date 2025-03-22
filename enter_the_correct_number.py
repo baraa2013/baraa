@@ -25,6 +25,7 @@ if button.button('إرسال'):
             anser = int(anser)
             
             if anser == st.session_state.x:
+                button.empty()
                 st.success('أحسنت الرقم صحيح\nأعد تشغيل الموقع لإعادة اللعب')
 
             elif anser > st.session_state.x:
@@ -34,6 +35,9 @@ if button.button('إرسال'):
             elif anser < st.session_state.x:
                 st.warning('العدد أكبر قليلا')
                 st.session_state.repeats2 +=1
+
+            elif anser > 50:
+                st.error('الرجاء كتابة عدد من 1 إلى 50')
 
             else:
                 st.error('أدخل اجابتك')
